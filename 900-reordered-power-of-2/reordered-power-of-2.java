@@ -1,16 +1,19 @@
 class Solution {
-    public String getSortedStr(int n) {
-        char[] chars = String.valueOf(n).toCharArray();
-        Arrays.sort(chars);
-        return new String(chars);
+    public int[] getSortedStr(int n) {
+        int[] count = new int[10];
+        while (n > 0) {
+            count[n % 10]++;
+            n /= 10;
+        }
+        return count;
     }
 
     public boolean reorderedPowerOf2(int n) {
-        String sortedStr = getSortedStr(n);
+        int[] inputCount = getSortedStr(n);
 
         // Check all powers of 2 up to 2^29
         for (int p = 0; p <= 29; p++) {
-            if (sortedStr.equals(getSortedStr(1 << p))) {
+            if (Arrays.equals(inputCount, getSortedStr(1 << p))) {
                 return true;
             }
         }
