@@ -42,3 +42,7 @@ class Solution {
         return -1;
     }
 }
+
+//Apporach - {Binary Search}
+// T.C = O(log(min(m, n)))
+// S.C = O(1);
