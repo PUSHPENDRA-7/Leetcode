@@ -8,9 +8,9 @@ var maxOperations = function (s) {
     let i = 0;
     let result = 0;
     while (i < n) {
-        if (s[i] == '0') {
+        if (s[i] === '0') {
             result += countseen;
-            while (i < n && s[i] == '0') {
+            while (i < n && s[i] ==='0') {
                 i++;
             }
         } else {
